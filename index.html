@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Night Lamp CSS Animation Project - 13</title>
+  <style>
+     :root{
+  --body-color: #6e7760;
+  --container-color: #94a678;
+  --border-color: #4d4a4b;
+  --base-lapm-color: #f0646b;
+  --button-color: #68c5b5;
+  --bar-color: #ffffff;
+  --joint-blub-color: #f5d384;
+}
+body{
+  background-color: var(--body-color);
+}
+.container{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 550px;
+  width: 550px;
+  background-color: var(--container-color);
+  border-radius: 50%;
+}
+.showcontent{
+  position: relative;
+  height: 480px;
+  width: 0;
+  overflow: hidden;
+  transform-origin: 275px 480px;
+  animation: animsc 5s ease-in-out infinite;
+}
+@keyframes animsc {
+  10%, 90%{
+    width: 550px;
+  }
+}
+.border{
+  border: 5px solid var(--border-color);
+}
+.ground{
+  position: absolute;
+  width: 370px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 220px;
+  bottom: 0;
+}
+.ground::before{
+  content: "";
+  position: absolute;
+width: 40px;
+left: -50px;
+border-bottom: 5px solid var(--border-color);
+border-radius: 220px;
+}
+.ground::after{
+  content: "";
+  position: absolute;
+width: 30px;
+right: -40px;
+border-bottom: 5px solid var(--border-color);
+border-radius: 220px;
+}
+.base{
+  position: absolute;
+  height: 35px;
+  width: 140px;
+  border-radius: 10px;
+  background-color: var(--base-lapm-color);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  animation: animbase 5s ease-in-out infinite;
+bottom: -40px;
+}
+@keyframes animbase {
+  10%, 20%{
+    bottom: 220px;
+    transform: rotate(360deg);
+  }
+  20%, 85%{
+    bottom: 0;
+    transform: rotate(0deg);
+    left: 38%;
+  }
+  90%, 100%{
+    bottom: -40px;
+  }
+  
+}
+.button{
+  position: absolute;
+  height: 20px;
+  width: 40px;
+  border-radius: 10px;
+  background-color: var(--button-color);
+  left: 50%;
+ 
+  z-index: 50;
+  animation: animbutton 5s ease-in-out infinite;
+bottom: -30px;
+}
+@keyframes animbutton {
+  0%, 20%{
+    bottom: -140px;
+  }
+  20%, 30%{
+    bottom: 40px;
+  }
+  30%, 85%{
+    bottom: 30px;
+  }
+  
+}
+.bar{
+  position: absolute;
+  width: 8px;
+  height: 100px;
+  background-color: var(--bar-color);
+  z-index: 5;
+}
+.bar::before{
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  left: -17.5px;
+  top: -17.5px;
+  border: 5px solid var(--border-color);
+  background-color: var(--joint-blub-color);
+  z-index: 70;
+
+}
+.bar1{
+  position: absolute;
+  left: 45%;
+  transform-origin: 4px 100px;
+  animation: animbar1 5s ease-in-out infinite;
+
+}
+@keyframes animbar1 {
+  0%, 20%{
+    bottom: -140px;
+    transform: rotate(180deg);
+  }
+  30%, 80%{
+    bottom: 20px;
+    transform: rotate(-30deg);
+  }
+  90%, 100%{
+    bottom: -140px;
+    transform: rotate(180deg);
+  }
+  
+}
+.bar2{
+  transform-origin: center bottom;
+  transform: rotate(30deg);
+  animation: animbar2 5s ease-in-out infinite;
+}
+@keyframes animbar2 {
+  0%, 20%{
+    bottom: -140px;
+    transform: rotate(180deg);
+  }
+  30%, 40%{
+    left: 35%;
+    bottom: 120px;
+    transform: rotate(-50deg);
+  }
+  41%, 55%{
+    left: 35%;
+    bottom: 120px;
+    transform: rotate(-70deg);
+  }
+  60%, 85%{
+    left: 38%;
+    bottom: 120px;
+    transform: rotate(30deg);
+  }
+  90%, 100%{
+    bottom: -140px;
+    transform: rotate(180deg);
+  }
+  
+}
+.blubHolder{
+  position: absolute;
+  height: 50px;
+  width: 60px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-right: none;
+  transform: translateX(-45%);
+  left: 50%;
+  z-index: 50;
+  animation: animBH 5s ease-in-out infinite;
+  background-color: var(--base-lapm-color);
+}
+@keyframes animBH {
+  0%, 55%{
+    transform: scale(0);
+    visibility: hidden;
+  }
+  56%{
+    left: 25%;
+
+  }
+  60%, 85%{
+    bottom: 175px;
+    left: 48%;
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(0);
+  }
+}
+.blubHolder::before{
+  content: "";
+  position: absolute;
+  height: 90px;
+  width:  50px;
+  border-top-left-radius: 70px;
+  border-bottom-left-radius: 70px;
+  border-left: none;
+  top: -25px;
+  left: 40px;
+  background-color: var(--base-lapm-color);
+  border: 5px solid var(--border-color);
+
+}
+.blubHolder::after{
+  content: "";
+  position: absolute;
+  height: 50px;
+  width: 30px;
+  left: 35px;
+  background-color: var(--base-lapm-color);
+}
+.blubHolderBorder{
+  position: absolute;
+  height: 110px;
+  width: 15px;
+  border-radius: 20px;
+  left: 66%;
+  bottom : 145px;
+  transform: scale(0);
+  z-index: 50;
+  background-color: var(--bar-color);
+  animation: animBlubHolderBorder 5s ease-in-out infinite;
+}
+@keyframes animBlubHolderBorder {
+  0%, 60%{
+    transform: scale(0);
+  }
+  65%, 70%{
+    transform: scale(1.5);
+  }
+  75%, 85%{
+    transform: scale(1);
+  }
+   100%{
+    transform: scale(0);
+   }
+  
+}
+.blub{
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  left: 62%;
+  border-radius: 50%;
+  transform: scale(0);
+  bottom: 165px;
+  animation: animblub 5s ease-in-out infinite;
+  background-color: var(--joint-blub-color);
+}
+@keyframes animblub {
+  0%, 70%{
+    transform: scale(0);
+  }
+   75%, 85%{
+    transform: scale(1);
+   }
+}
+.lampHeadSet{
+  position: relative;
+  bottom: -450px;
+  left: -30px;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="showcontent">
+
+      <div class="lampHeadSet">
+        <div class="border blub"></div>
+        <div class="border blubHolder"></div>
+        <div class="border blubHolderBorder"></div>
+      </div>
+      <div class="border bar bar2"></div>
+      <div class="border bar bar1"></div>
+
+      <div class="border button"></div>
+      <div class="border base"></div>
+      <div class="border ground"></div>
+
+
+    </div>
+  </div>
+</body>
+</html>
